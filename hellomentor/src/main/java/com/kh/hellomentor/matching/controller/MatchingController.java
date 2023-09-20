@@ -358,6 +358,7 @@ public class MatchingController {
                 combinedInfo.put("filePath", defaultProfile.getFilePath());
                 combinedInfo.put("changeName", defaultProfile.getChangeName());
 
+
             }
 
 
@@ -397,7 +398,6 @@ public class MatchingController {
         List<Member> mentorList = matchingService.getMentorList2(userNo);
         List<Profile> mentorProfileList = matchingService.getMentorProfileList2(userNo);
         List<Mentoring> mentoringList = matchingService.getMentoringList2(userNo);
-
         List<Matching> matchingList = matchingService.getMatchingList2(userNo);
 
         List<Map<String, Object>> combinedList = new ArrayList<>();
