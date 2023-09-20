@@ -59,6 +59,11 @@
         VALUES (#{roomId}, #{name}, #{chatRoomType}, #{relatedNo})
     </insert>
 
+    <insert id="createMentoringRoom" parameterType="chatRoomDTO">
+        INSERT INTO CHATROOM (CHATROOM_ID, CHATROOM_NAME, CHATROOM_TYPE, RELATED_NO)
+        VALUES (#{roomId}, #{name}, #{chatRoomType}, #{relatedNo})
+    </insert>
+
     <select id="findStudyApplicants" parameterType="int" resultType="int">
         SELECT USER_NO
         FROM STUDY_APPLICANT
@@ -69,4 +74,15 @@
         INSERT INTO CHATROOM_PERSON
         VALUES (#{roomId}, #{userNo})
     </insert>
+
+    <resultMap id="mentoringResult2" type="mentoring">
+        <id column="MENTOR_REGIS_NO" property="regisNo"/>
+        <result column="TITLE" property="title"/>
+    </resultMap>
+
+    <select id="findMentorTitle" parameterType="int" resultMap="mentoringResult2">
+        SELECT TITLE, MENTOR_REGIS_NO
+        FROM MENTOR
+        WHERE USER_NO = #{mentorNo}
+    </select>
 </mapper>

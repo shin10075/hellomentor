@@ -100,7 +100,7 @@ public class MatchingDao {
 
         Payment p = (Payment) paymentData.get("payment");
         Matching m = (Matching) paymentData.get("matching");
-        Member member = (Member) paymentData.get("m");
+        Member member = (Member) paymentData.get("member");
 
         result = sqlSession.insert("matchingMapper.insertPayment",p);
 
