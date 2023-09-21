@@ -28,11 +28,13 @@ public class ChatRoomDTO {
         return room;
     }
 
-    public static ChatRoomDTO createRoom(String name) {
+    public static ChatRoomDTO createRoom(String name, int regisNo) {
         ChatRoomDTO room = new ChatRoomDTO();
 
         room.roomId = UUID.randomUUID().toString();
         room.name = name;
+        room.relatedNo = regisNo;
+        room.chatRoomType = "M";
         return room;
     }
 }

@@ -59,6 +59,7 @@ public class RoomController {
 
         model.addAttribute("messages", repository.findMessageById(roomId));
 
+
         return "chat/room";
     }
 }

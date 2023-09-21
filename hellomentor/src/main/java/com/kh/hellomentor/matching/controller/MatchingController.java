@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import com.kh.hellomentor.board.model.vo.Board;
+import com.kh.hellomentor.chat.model.repo.ChatRoomRepository;
 import com.kh.hellomentor.member.model.vo.Follow;
 import com.kh.hellomentor.member.model.vo.Payment;
 import com.kh.hellomentor.member.model.vo.Profile;
@@ -36,6 +37,9 @@ public class MatchingController {
 
     @Autowired
     private MatchingService matchingService;
+
+    @Autowired
+    private ChatRoomRepository repository;
 
     @GetMapping("/mentoring")
     public String selectList(
@@ -231,6 +235,9 @@ public class MatchingController {
         int result = 0;
 
         result = matchingService.insertPaymentMatching(paymentData);
+        if(result > 0){
+            repository.createChatRoomDTO(userNo, loginUser.getUserNo());
+        }
 
         System.out.println("dawdad");
         System.out.println(result);
@@ -366,6 +373,7 @@ public class MatchingController {
                 combinedInfo.put("filePath", defaultProfile.getFilePath());
                 combinedInfo.put("changeName", defaultProfile.getChangeName());
 
+
             }
 
 
@@ -405,7 +413,6 @@ public class MatchingController {
         List<Member> mentorList = matchingService.getMentorList2(userNo);
         List<Profile> mentorProfileList = matchingService.getMentorProfileList2(userNo);
         List<Mentoring> mentoringList = matchingService.getMentoringList2(userNo);
-
         List<Matching> matchingList = matchingService.getMatchingList2(userNo);
 
         List<Map<String, Object>> combinedList = new ArrayList<>();
@@ -492,8 +499,9 @@ public class MatchingController {
 
         try {
             matchingService.mentoring_accept(userNo, regisNo, loginuserNo);
+            repository.createChatRoomDTO(userNo, loginuserNo);
             response.put("success", true);
-            response.put("message", "제안이 수락되었습니다.");
+            response.put("message", "제안이 수락되었습니다. 채팅방을 확인하세요");
         } catch (Exception e) {
             response.put("success", false);
             response.put("message", "제안 수락에 실패했습니다.");

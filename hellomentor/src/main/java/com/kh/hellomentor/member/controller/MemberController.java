@@ -208,31 +208,33 @@ public class MemberController {
 
     public String uploadProfileImg(MultipartFile file, int userNo) throws IOException {
         String currentDirectory = System.getProperty("user.dir");
+//        C:\HelloMentor\hellomentor
+//        System.out.println(currentDirectory);
 
-        String uploadDir = currentDirectory + "/hellomentor/src/main/resources/static/img/profile/";
-        String buildUploadDir = currentDirectory + "/hellomentor/build/resources/main/static/img/profile/";
+        String uploadDir = currentDirectory + "/src/main/resources/static/img/profile/";
+//        String buildUploadDir = currentDirectory + "/hellomentor/build/resources/main/static/img/profile/";
 
 
         String fileName = "profile_" + userNo + ".jpg";
 
         File uploadPath = new File(uploadDir);
-        File buildUploadPath = new File(buildUploadDir);
+//        File buildUploadPath = new File(buildUploadDir);
 
         if (!uploadPath.exists()) {
             uploadPath.mkdirs();
         }
 
-        if (!buildUploadPath.exists()) {
-            buildUploadPath.mkdirs();
-        }
+//        if (!buildUploadPath.exists()) {
+//            buildUploadPath.mkdirs();
+//        }
 
 
         File destFile = new File(uploadPath, fileName);
-        File buildDestFile = new File(buildUploadPath, fileName);
+//        File buildDestFile = new File(buildUploadPath, fileName);
 
         file.transferTo(destFile);
 
-        Files.copy(destFile.toPath(), buildDestFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+//        Files.copy(destFile.toPath(), buildDestFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 
         return fileName;
     }
