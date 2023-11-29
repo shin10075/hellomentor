@@ -22,17 +22,205 @@
 ### 서버 : Apache Tomcat
 ### IDE : IntelliJ
 ### ORM : MyBatis
+
+<br>
+
+## System Architecture
+
+<details>
+<summary>view</summary>
+<div markdown='1'>
+
+ ![ERD](myRoleScreenShot/finalProjectArchitecture.png)
+</div>
+</details>
+
+<br>
+
+## ERD
+
+<details>
+<summary>view</summary>
+<div markdown='1'>
+
+ ![ERD](myRoleScreenShot/finalProjectERD.png)
+</div>
+</details>
+
 <br>
 <hr>
 <br>
 
+
 ## 소감
 <br>
 
->파이널 프로젝트에서 욕심을 많이 부려서 조원들에게 너무 미안했습니다.  
- 처음으로 맡은 조장 역할로 다른 사람들의 코드를 분석하는 것은 좋은 의도였으나 많이 닦달하고 의견 조율에 권력을 휘두른 것 같아 너무 죄스러운 마음이 듭니다. 반성을 통해 많은 것을 배울 수 있었습니다.  
- 그리고 제 자신의 한계와 협동의 중요성을 배울 수 있었습니다.  
- 팀 프로젝트는 출항한 배와 같아서 선장 혼자만의 힘으로는 배가 온전할 수 없습니다. 누군가가 돛을 펼치고 누군가가 노를 젓듯이 선장은 그들을 격려하고 때로는 같이 도와야 합니다.  
- 그리고 내일의 날씨가 어떨 것인지 분석하고 목표 지향점을 잊지 않으채 키를 잡아야 배는 보물섬에 도착할 것입니다.  
- 다시한번 능력 부족한 조장의 말을 들어준 조원들에게 죄송하고 감사합니다.
+<div>
+	<big>
+		이 프로젝트를 통해 Git을 통한 버전 관리와 GitHub를 통한 협업 능력을 배양할 수 있었습니다.
+		또한, Spring Boot를 통한 백엔드 개발로 다시 한번 MVC 패턴을 학습하며 스프링 어노테이션에 더욱 익숙해 질수 있었습니다. 물론 그 과정에서 Auto Configuration의 능력에 놀라기도 했습니다.
+		새로운 템플릿 엔진인 Thymeleaf와 MySQL의 문법, STOMP 통신을 새로 익혀야 하는 과정에서 새로운 것을 배우는 것에는 공식 사이트를 찾아보는 것이 가장 좋다는 것도 깨달았습니다.
+		마지막으로 처음으로 조장 역할을 하면서 조장의 자리란 결정과 동시에 책임을 져야하는 자리라는 것을 배웠습니다. 그리고 개발은 혼자 하는 것이 아니라 같이 하는 것임을 더욱 느낄 수 있던 프로젝트였습니다.
+	</big>
+</div>
+<br>
+<hr>
+
+
+<br>
+
+## 나의 역할
+<br>
+
+- [메인페이지 & navi바](#메인페이지)
+- [게시글 신고하기](#신고하기)
+- [채팅](#채팅)
+
+<br>
+<br>
+
+### 메인페이지
+
+<details>
+ <summary>view</summary>
+ <div markdown='1'>
+  <img src="myRoleScreenShot/mainPageScroll.gif" height="500"/>
+ </div>
+</details>
+
+<details>
+ <summary>description</summary>
+ <br>
+ <div markdown='1'>
+  <ul>
+   <li>
+    <details>
+     <summary>게시글의 조회수/ 추천수 기준 TOP5 게시글만 조회</summary>
+     <img src="myRoleScreenShot/main/mainPage.png" height="500"/>
+    </details>
+   </li>
+   <li>
+    <details>
+     <summary>DB에서 게시판별 TOP5 게시글 SELECT</summary>
+     <img src="myRoleScreenShot/main/topFiveBoardMapper.png" height="500"/>
+    </details>
+   </li>
+  </ul> 
+ </div>
+</details>
+
+#### navi바
+
+<details>
+ <summary>view</summary>
+ <div markdown='1'>
+  <img src="myRoleScreenShot/headerClick.gif" height="500"/>
+ </div>
+</details>
+
+<details>
+ <summary>description</summary>
+ <br>
+ <div markdown='1'>
+  <ul>
+   <li>
+    <details>
+     <summary>프로필 이미지 호버시 스크롤 바 생성</summary>
+     <img src="myRoleScreenShot/main/profileBox.png" height="500"/>
+    </details>
+   </li>
+   <li>
+    <details>
+     <summary>회원별 열람 게시판 조절</summary>
+     <img src="myRoleScreenShot/main/naviBar.png" height="500"/>
+    </details>
+   </li>
+  </ul> 
+ </div>
+</details>
+
+<br>
+<br>
+
+### 신고하기
+
+<details>
+ <summary>view</summary>
+ <div markdown='1'>
+  <img src="myRoleScreenShot/reportWrite.gif" height="500"/>
+ </div>
+</details>
+
+<details>
+ <summary>description</summary>
+ <br>
+ <div markdown='1'>
+  <ul>
+   <li>
+    <details>
+     <summary>신고하기 링크를 통해 신고 페이지로 이동</summary>
+     <img src="myRoleScreenShot/report/reportButton.png"/>
+    </details>
+   </li>
+   <li>
+    <details>
+     <summary>신고 INSERT</summary>
+     <img src="myRoleScreenShot/report/reportMapper.png" height="500"/>
+    </details>
+   </li>
+  </ul> 
+ </div>
+</details>
+
+<br>
+<br>
+
+### 채팅
+
+<details>
+ <summary>view</summary>
+ <div markdown='1'>
+  <img src="myRoleScreenShot/chatting.gif" height="500"/>
+ </div>
+</details>
+
+<details>
+ <summary>description</summary>
+ <br>
+ <div markdown='1'>
+  <ul>
+   <li>
+    <details>
+     <summary>UUID.randomUUID로 chatRoomDTO에 고유번호 생성 및 부여</summary>
+     <img src="myRoleScreenShot/chat/chatRoomDTO.png"/>
+    </details>
+   </li>
+   <li>
+    <details>
+     <summary>StompWebSocketConfig</summary>
+     <img src="myRoleScreenShot/chat/stompWebSocketConfig.png" height="500"/>
+    </details>
+   </li>
+   <li>
+    <details>
+     <summary>메세지 수신(sub)을 위한 StompChatController</summary>
+     <img src="myRoleScreenShot/chat/stompChatController.png" height="500"/>
+    </details>
+   </li>
+   <li>
+    <details>
+     <summary>메세지 발신(pub)을 위한 전송 button</summary>
+     <img src="myRoleScreenShot/chat/pubChatMessage.png"/>
+    </details>
+   </li>
+   <li>
+    <details>
+     <summary>메세지를 받자마자 화면에 랜더해주는 SocketJS</summary>
+     <img src="myRoleScreenShot/chat/socketJS.png" height="500"/>
+    </details>
+   </li>
+  </ul> 
+ </div>
+</details>
+
 
