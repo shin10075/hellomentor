@@ -63,4 +63,6 @@ public interface MatchingService {
     void mentoring_accept(int userNo, int regisNo, int loginuserNo);
 
     int mentorupdateToken(Map<String, Object> mentorToken);
+
+    int getMentorProfileByNo(int userNo);
 }

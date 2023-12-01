@@ -353,5 +353,11 @@
         WHERE USER_NO = #{userNo}
     </update>
 
+    <select id="getMentorProfileByNo" parameterType="int" resultType="int">
+        SELECT MENTOR_REGIS_NO
+        FROM MENTOR
+        WHERE USER_NO = #{userNo}
+    </select>
+
 </mapper>
 

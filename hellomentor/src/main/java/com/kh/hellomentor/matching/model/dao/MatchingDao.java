@@ -193,4 +193,17 @@ public class MatchingDao {
         return result;
     }
 
+    public int getMentorProfileByNo(int userNo) {
+
+        int result = 0;
+
+        if( sqlSession.selectOne("matchingMapper.getMentorProfileByNo", userNo) == null) {
+            result = 0;
+        } else {
+            result = 1;
+        }
+
+        return result;
+    }
+
 }

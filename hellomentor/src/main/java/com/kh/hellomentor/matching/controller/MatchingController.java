@@ -269,6 +269,12 @@ public class MatchingController {
         //userNo는 게시글을 등록한 사람의 번호임 즉 결제나 제안을 하는 userNo가 아니고 받는사람.
         Member loginUser = (Member) session.getAttribute("loginUser");
 
+        int isExist = matchingService.getMentorProfileByNo(loginUser.getUserNo());
+
+        if(isExist == 0) {
+            return 0;
+        }
+
         matching.setMatchingRegisNo(postNo); //게시글 등록 번호
         matching.setMentorNo(loginUser.getUserNo()); //보내는사람 번호 즉 로그인한 사람의 번호
         matching.setMenteeNo(userNo); //받는사람의 번호 게시글 등록한 사람의 번호
@@ -505,6 +511,11 @@ public class MatchingController {
         } catch (Exception e) {
             response.put("success", false);
             response.put("message", "제안 수락에 실패했습니다.");
+        }
+
+        if((boolean)response.get("success")) {
+            matchingService.mentoring_accept(userNo, regisNo, loginuserNo);
+            repository.createChatRoomDTO(userNo, loginuserNo);
         }
 
         return response;

@@ -149,5 +149,11 @@ public class MatchingServiceImpl implements MatchingService{
         return matchingDao.mentorupdateToken(mentorToken);
     }
 
+    @Override
+    public int getMentorProfileByNo(int userNo) {
+
+        return matchingDao.getMentorProfileByNo(userNo);
+
+    }
 
 }

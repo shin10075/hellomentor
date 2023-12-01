@@ -302,9 +302,14 @@
                                     // 나중에 필요한 데이터를 여기에 추가할 수 있음
                                 },
                                 success: function (data) {
-                                    console.log(data);
-                                    alert("제안이 완료되었습니다");
-                                    // 결제 정보를 보내고 회원 토큰 차감 컨트롤러에서 작업하면됨.
+                                    if(data == 0) {
+                                        console.log(data);
+                                        alert("멘토링 등록 후 열람 가능합니다.")
+                                    } else {
+                                        console.log(data);
+                                        alert("제안이 완료되었습니다");
+                                        // 결제 정보를 보내고 회원 토큰 차감 컨트롤러에서 작업하면됨.
+                                    }
                                 },
                                 error: function () {
                                     alert("제안 중 오류가 발생했습니다.");
